@@ -1,0 +1,101 @@
+class PlayerAnimation : ZilchComponent
+{
+    //Standing Still
+    [Property]
+    var Class : SpriteSource = null;
+    //Moving Left
+    [Property]
+    var ClassLeftAnimation : SpriteSource = null;
+    //Moving right
+    [Property]
+    var ClassRightAnimation : SpriteSource = null;
+    //Jump Animation
+    [Property]
+    var ClassJump : SpriteSource = null;
+    //Attack animation
+    [Property]
+    var ClassAttack : SpriteSource = null;
+    
+    var Controller:Gamepad = null;
+
+    var AttackAnimationActive : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        Console.WriteLine(this.AttackAnimationActive);
+        Console.WriteLine(this.Owner.Sprite.SpriteSource.Name);
+        if(!this.AttackAnimationActive)
+        
+            
+            //else if(this.Controller.LeftStick == Real2.Zero)/*Zero.Keyboard.KeyIsDown(Keys.A) == false && Zero.Keyboard.KeyIsDown(Keys.D) == false && Zero.Keyboard.KeyIsDown(Keys.W) == false && Zero.Keyboard.KeyIsDown(Keys.S) == false)*/
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.D) && Zero.Keyboard.KeyIsDown(Keys.Space))
+            {
+                this.Owner.Sprite.SpriteSource = this.ClassJump;
+                
+            }
+            
+            else if(Zero.Keyboard.KeyIsDown(Keys.A) && Zero.Keyboard.KeyIsDown(Keys.Space))
+            {
+                this.Owner.Sprite.SpriteSource = this.ClassJump;
+                this.Owner.Sprite.FlipX = true;
+
+            }
+           
+            
+            else if(Zero.Keyboard.KeyIsDown(Keys.Space) )
+            {
+                this.Owner.Sprite.SpriteSource = this.ClassJump;
+            }
+            
+            else if(Zero.Keyboard.KeyIsDown(Keys.A) && this.Owner.Sprite.SpriteSource != this.ClassLeftAnimation && this.Owner.SweptController.Grounded)
+            {
+             
+                this.Owner.Sprite.SpriteSource = this.ClassLeftAnimation;
+                this.Owner.Sprite.FlipX = false;
+            }
+             
+            else if(Zero.Keyboard.KeyIsDown(Keys.D) && this.Owner.Sprite.SpriteSource != this.ClassRightAnimation && this.Owner.SweptController.Grounded)
+            {
+             
+                this.Owner.Sprite.SpriteSource = this.ClassRightAnimation;
+                this.Owner.Sprite.FlipX = false;
+           
+            }
+            else if(Zero.Keyboard.KeyIsUp(Keys.A) && Zero.Keyboard.KeyIsUp(Keys.D) && Zero.Keyboard.KeyIsUp(Keys.Space) 
+                && this.Owner.SweptController.Grounded && Zero.Keyboard.KeyIsUp(Keys.E))
+            {
+                this.Owner.Sprite.SpriteSource = this.Class;
+                this.Owner.Sprite.FlipX = false;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.A) && !this.Owner.SweptController.Grounded)
+            {
+                this.Owner.Sprite.FlipX = true;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.D) && !this.Owner.SweptController.Grounded)
+            {
+                this.Owner.Sprite.FlipX = false;
+            }
+            else if(Zero.Keyboard.KeyIsDown(Keys.E) && this.Owner.SweptController.Grounded)
+            {
+                this.Owner.Sprite.SpriteSource = this.ClassAttack;
+                this.AttackAnimationActive = true;
+            }
+        
+        
+        if(this.AttackAnimationActive && this.Owner.Sprite.CurrentFrame == 0)
+        {
+            this.AttackAnimationActive = false;
+        }
+   
+   
+    }
+}

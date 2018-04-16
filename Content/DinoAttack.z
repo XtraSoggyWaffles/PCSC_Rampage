@@ -31,7 +31,7 @@ class DinoAttack : ZilchComponent
     //Pass the archetype and position to the Space to make our object
     var classAttack = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);
 
-    classAttack.RigidBody.Velocity = Real3(20,0,0);
+    classAttack.RigidBody.Velocity = Real3(40,0,0);
  
   }
   else if(event.Key == Keys.E && Zero.Keyboard.KeyIsUp(Keys.A) && Zero.Keyboard.KeyIsUp(Keys.D))
@@ -44,7 +44,7 @@ class DinoAttack : ZilchComponent
     // Pass the archetype and position to the Space to make our object
     var classAttack = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);
 
-    classAttack.RigidBody.Velocity = Real3(40,15,0);
+    classAttack.RigidBody.Velocity = Real3(50,15,0);
   }
   
  }

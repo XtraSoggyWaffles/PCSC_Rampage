@@ -1,0 +1,19 @@
+class SpriteDecay : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.Health.CurrentHealth <= 20)
+        {
+            this.Owner.Sprite.CurrentFrame = 1;
+        }
+        if(this.Owner.Health.CurrentHealth <= 10)
+        {
+            this.Owner.Sprite.CurrentFrame = 2;
+        }
+    }
+}

@@ -69,13 +69,13 @@ class PlayerAnimation : ZilchComponent
            
             }
             else if(Zero.Keyboard.KeyIsUp(Keys.A) && Zero.Keyboard.KeyIsUp(Keys.D) && Zero.Keyboard.KeyIsUp(Keys.Space) 
-                && this.Owner.SweptController.Grounded && Zero.Keyboard.KeyIsUp(Keys.E))
+                && this.Owner.SweptController.Grounded && Zero.Keyboard.KeyIsUp(Keys.E) && this.Owner.Sprite.SpriteSource != this.Class)
             {
                 this.Owner.Sprite.SpriteSource = this.Class;
                 this.Owner.Sprite.FlipX = false;
             }
             
-            if(Zero.Keyboard.KeyIsDown(Keys.A) && !this.Owner.SweptController.Grounded)
+            if(Zero.Keyboard.KeyIsDown(Keys.A) )//&& this.Owner.SweptController.Grounded)
             {
                 this.Owner.Sprite.FlipX = true;
             }
@@ -84,16 +84,17 @@ class PlayerAnimation : ZilchComponent
             {
                 this.Owner.Sprite.FlipX = false;
             }
-            else if(Zero.Keyboard.KeyIsDown(Keys.E) && this.Owner.SweptController.Grounded)
+            else if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.Owner.SweptController.Grounded && !this.AttackAnimationActive)
             {
                 this.Owner.Sprite.SpriteSource = this.ClassAttack;
                 this.AttackAnimationActive = true;
             }
         
         
-        if(this.AttackAnimationActive && this.Owner.Sprite.CurrentFrame == 0)
+        if(this.AttackAnimationActive && this.Owner.Sprite.CurrentFrame == 3)
         {
             this.AttackAnimationActive = false;
+            this.Owner.Sprite.SpriteSource = this.Class;
         }
    
    

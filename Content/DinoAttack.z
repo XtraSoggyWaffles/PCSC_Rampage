@@ -7,6 +7,7 @@ class DinoAttack : ZilchComponent
 
   function OnKeyDown(event : KeyboardEvent)
  {
+<<<<<<< HEAD
      if(!this.Owner.PlayerAnimation.AttackAnimationActive)
      {
           // When space key is pressed
@@ -49,6 +50,47 @@ class DinoAttack : ZilchComponent
             classAttack.RigidBody.Velocity = Real3(40,15,0);
           }
       }
+=======
+  // When space key is pressed
+  if(event.Key == Keys. E && Zero.Keyboard.KeyIsDown(Keys.A))
+  {
+    var spawnPosition = this.Owner.Transform.Translation; 
+
+    // Find the attack archetype:
+    var archetypeToSpawn = Archetype.Bite;
+
+    // Pass the archetype and position to the Space to make our object
+    var classAttack = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);
+
+    classAttack.RigidBody.Velocity = Real3(-20,0,0);
+ 
+  }
+  else if(event.Key == Keys. E && Zero.Keyboard.KeyIsDown(Keys.D))
+  {
+    var spawnPosition = this.Owner.Transform.Translation;
+
+    //Find the bite archetype:
+    var archetypeToSpawn = Archetype.Bite;
+
+    //Pass the archetype and position to the Space to make our object
+    var classAttack = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);
+
+    classAttack.RigidBody.Velocity = Real3(40,0,0);
+ 
+  }
+  else if(event.Key == Keys.E && Zero.Keyboard.KeyIsUp(Keys.A) && Zero.Keyboard.KeyIsUp(Keys.D))
+  {
+        var spawnPosition = this.Owner.Transform.Translation;
+
+    // Find the Ball archetype:
+    var archetypeToSpawn = Archetype.Bite;
+
+    // Pass the archetype and position to the Space to make our object
+    var classAttack = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);
+
+    classAttack.RigidBody.Velocity = Real3(50,15,0);
+  }
+>>>>>>> fb535b39868b78e9a38b9411c0d79d13b69b7960
   
  }
 }

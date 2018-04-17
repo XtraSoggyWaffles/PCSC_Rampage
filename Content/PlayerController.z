@@ -1,23 +1,75 @@
 class PlayerController : ZilchComponent
 {
+    var NearBuilding : Boolean = false;
+    var DistanceFromClosestBuilding : Real = 0;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
+
+
    function OnLogicUpdate(event : UpdateEvent)
 {
+    if(this.NearBuilding && !Zero.Keyboard.KeyIsPressed(Keys.D)
+    && !Zero.Keyboard.KeyIsPressed(Keys.A))
+    {
+        this.Owner.SweptController.MaxFallSpeed = 0.0;
+        
+    }
+    
+    else if(!this.NearBuilding && !Zero.Keyboard.KeyIsPressed(Keys.D)
+    && !Zero.Keyboard.KeyIsPressed(Keys.A))
+    {
+        this.Owner.SweptController.Gravity = 10;
+        this.Owner.SweptController.MaxFallSpeed = 50.0;
+        
+    }
   var movement = Real3(0.0, 0.0, 0.0);
 
   // control left, right, and up
   if(Zero.Keyboard.KeyIsDown(Keys.A))
   {
-    movement.X -= 1.0;
+    if(this.NearBuilding && this.DistanceFromClosestBuilding > 0)
+      {
+          this.Owner.SweptController.Gravity = 0;
+          movement.Y += 5.0;
+      }
+      else if(this.NearBuilding && this.DistanceFromClosestBuilding < 0)
+      {
+          this.Owner.SweptController.Gravity = 10;
+          this.Owner.SweptController.MaxFallSpeed = 50.0;
+          movement.X -= 1.0;
+      }
+      else if(!this.NearBuilding)
+      {
+          this.Owner.SweptController.Gravity = 10;
+          this.Owner.SweptController.MaxFallSpeed = 50.0;
+          movement.X -= 1.0;
+      }
   }
 
   if(Zero.Keyboard.KeyIsDown(Keys.D))
   {
-    movement.X += 1.0;
+      if(this.NearBuilding && this.DistanceFromClosestBuilding < 0)
+      {
+          this.Owner.SweptController.Gravity = 0;
+          movement.Y += 5.0;
+      }
+      else if(this.NearBuilding && this.DistanceFromClosestBuilding > 0)
+      {
+          this.Owner.SweptController.Gravity = 10;
+          this.Owner.SweptController.MaxFallSpeed = 50.0;
+          movement.X += 1.0;
+      }
+      else if(!this.NearBuilding)
+      {
+          this.Owner.SweptController.Gravity = 10;
+          this.Owner.SweptController.MaxFallSpeed = 50.0;
+          movement.X += 1.0;
+      }
+    
   }
 
   if(Zero.Keyboard.KeyIsPressed(Keys.Space))

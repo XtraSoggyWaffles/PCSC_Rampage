@@ -180,7 +180,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, -1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -441,7 +441,7 @@ Level =
 					string DefaultSprite = "5a53e5499e0970e1:ControlsButton",
 					string HoveredSprite = "5a53e494fd6e5534:ControlButtonAnimation",
 					string ClickedSprite = "",
-					string LevelToLoad = "5a0d3b11ffce55dc:HowToPlayLevel",
+					string LevelToLoad = "5a0d3b11ffce55dc:ControlsLevel",
 				},
 			},
 			Cog = 

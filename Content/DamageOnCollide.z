@@ -69,6 +69,7 @@ class DamageOnCollide : ZilchComponent
         
         if(this.DieOnCollide)
         {
+            Console.WriteLine(collisionEvent.OtherObject.Name);
             this.Owner.Destroy();
         }
     }

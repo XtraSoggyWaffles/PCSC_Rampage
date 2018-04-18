@@ -65,7 +65,7 @@ class Health : ZilchComponent
                 this.Owner.Destroy();
                 if(this.Owner.Name.Contains("Building"))
                 {
-                    this.Owner.Parent.Damage.NumChildren -= 1;
+                    this.Owner.Parent.BuildingDamage.NumChildren -= 1;
                 }
             }
         }

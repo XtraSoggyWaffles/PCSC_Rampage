@@ -4,6 +4,7 @@ CollisionTable =
 	[
 		"4e740859314e5515:DefaultGroup",
 		"5a70c52744cb97c6:Bite",
+		"5a6b761391dc1550:Building",
 		"5a70c514413fd01f:Player",
 	],
 	Array CollisionFilters = 
@@ -22,7 +23,17 @@ CollisionTable =
 			string TypeA = "5a70c52744cb97c6:Bite",
 			string TypeB = "5a70c52744cb97c6:Bite",
 			bool SkipResolution = false,
-			bool SkipDetectingCollision = false,
+			bool SkipDetectingCollision = true,
+			bool StartEvent = false,
+			bool EndEvent = false,
+			bool PersistedEvent = false,
+			bool PreSolveEvent = false,
+		},
+		{
+			string TypeA = "5a70c52744cb97c6:Bite",
+			string TypeB = "5a6b761391dc1550:Building",
+			bool SkipResolution = false,
+			bool SkipDetectingCollision = true,
 			bool StartEvent = false,
 			bool EndEvent = false,
 			bool PersistedEvent = false,

@@ -104,7 +104,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-4.41174221, -3.72880793, 50],
+			Vec3 Translation = [-26.8400764, -10.1354399, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -116,7 +116,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 36.7879829,
+			float Size = 30.1194859,
 		},
 		EditorCameraController = 
 		{
@@ -124,7 +124,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-4.41174221, -3.72880793, -3.18577065e-07],
+			Vec3 LookTarget = [-26.8400764, -10.1354399, -1.21144058e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -276,7 +276,7 @@ Level =
 					bool SendsMessages = true,
 					bool Seamless = true,
 					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					string SerializedGroupName = "5a70c514413fd01f:Player",
 					Vec3 Offset = [0, 0, 0],
 					Vec3 Size = [4.25, 3.5, 0.5],
 				},
@@ -442,9 +442,13 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "5a6b761391dc1550:Building",
 			Vec3 Offset = [-18.75, -28, 0],
 			Vec3 Size = [5, 12, 0.5],
+		},
+		BuildingDamage = 
+		{
+			int PercentLeftToDestroy = 50,
 		},
 		Hierarchy = 
 		{
@@ -3171,9 +3175,13 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "5a6b761391dc1550:Building",
 			Vec3 Offset = [-18.75, -28, 0],
 			Vec3 Size = [5, 12, 0.5],
+		},
+		BuildingDamage = 
+		{
+			int PercentLeftToDestroy = 50,
 		},
 		Hierarchy = 
 		{
@@ -5900,9 +5908,13 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "5a6b761391dc1550:Building",
 			Vec3 Offset = [-18.75, -28, 0],
 			Vec3 Size = [5, 12, 0.5],
+		},
+		BuildingDamage = 
+		{
+			int PercentLeftToDestroy = 50,
 		},
 		Hierarchy = 
 		{

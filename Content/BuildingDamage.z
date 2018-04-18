@@ -1,9 +1,9 @@
-class Damage : ZilchComponent
+class BuildingDamage : ZilchComponent
 {
     var Children : Array[Cog] = new Array[Cog]();
     var NumChildren : Integer = 0;
     var OriginalNumChildren : Integer = 0;
-    [Property] var PercentLeftToDestroy : Integer = 100;
+    [Property] var PercentLeftToDestroy : Integer = 50;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);

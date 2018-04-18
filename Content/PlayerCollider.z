@@ -14,9 +14,9 @@ class PlayerCollider : ZilchComponent
         {
             this.LastTouchedBuilding = event.OtherObject.FindChildByName("BuildingCenter");
             this.Owner.Parent.PlayerController.NearBuilding = true;
-            Console.WriteLine("new building");
             
         }
+        
     }
     
     function OnCollisionEnded(event : CollisionEvent)
@@ -26,7 +26,6 @@ class PlayerCollider : ZilchComponent
         {
             this.LastTouchedBuilding = null;
             this.Owner.Parent.PlayerController.NearBuilding = false;
-            Console.WriteLine("No Building");
         }
     }
 

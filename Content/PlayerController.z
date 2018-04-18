@@ -33,8 +33,8 @@ class PlayerController : ZilchComponent
   {
     if(this.NearBuilding && this.DistanceFromClosestBuilding > 0)
       {
-          this.Owner.SweptController.Gravity = 0;
-          movement.Y += 5.0;
+          //this.Owner.SweptController.Gravity = 0;
+          //movement.Y += 5.0;
       }
       else if(this.NearBuilding && this.DistanceFromClosestBuilding < 0)
       {
@@ -48,14 +48,31 @@ class PlayerController : ZilchComponent
           this.Owner.SweptController.MaxFallSpeed = 50.0;
           movement.X -= 1.0;
       }
+      
+      if(Zero.Keyboard.KeyIsDown(Keys.W))
+      {
+          this.Owner.Transform.Translation += Real3(0,5,0) * event.Dt;
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          {
+              this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
+          }
+      }
+      else if(Zero.Keyboard.KeyIsDown(Keys.S))
+      {
+          this.Owner.Transform.Translation -= Real3(0,5,0) * event.Dt;
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          {
+              this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
+          }
+      }
   }
 
   if(Zero.Keyboard.KeyIsDown(Keys.D))
   {
       if(this.NearBuilding && this.DistanceFromClosestBuilding < 0)
       {
-          this.Owner.SweptController.Gravity = 0;
-          movement.Y += 5.0;
+          //this.Owner.SweptController.Gravity = 0;
+          //movement.Y += 5.0;
       }
       else if(this.NearBuilding && this.DistanceFromClosestBuilding > 0)
       {
@@ -68,6 +85,23 @@ class PlayerController : ZilchComponent
           this.Owner.SweptController.Gravity = 10;
           this.Owner.SweptController.MaxFallSpeed = 50.0;
           movement.X += 1.0;
+      }
+      
+      if(Zero.Keyboard.KeyIsDown(Keys.W))
+      {
+          this.Owner.Transform.Translation += Real3(0,5,0) * event.Dt;
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          {
+              this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
+          }
+      }
+      else if(Zero.Keyboard.KeyIsDown(Keys.S))
+      {
+          this.Owner.Transform.Translation -= Real3(0,5,0) * event.Dt;
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          {
+              this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
+          }
       }
     
   }

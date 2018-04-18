@@ -1,0 +1,18 @@
+class Time : ZilchComponent
+{
+    var Time : Real = 300;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Time -= event.Dt;
+        this.Owner.SpriteText.Text = "Time: `Math.Round(this.Time)`";
+        if(this.Time <= 0)
+        {
+            this.Space.ReloadLevel();
+        }
+    }
+}

@@ -1,5 +1,8 @@
 class Time : ZilchComponent
 {
+    [Property]
+    var LevelToLoad : Level = null;
+    
     var Time : Real = 300;
     function Initialize(init : CogInitializer)
     {
@@ -12,7 +15,7 @@ class Time : ZilchComponent
         this.Owner.SpriteText.Text = "Time: `Math.Round(this.Time)`";
         if(this.Time <= 0)
         {
-            this.Space.ReloadLevel();
+            //this.Space.LoadLevel(LevelToLoad);
         }
     }
 }

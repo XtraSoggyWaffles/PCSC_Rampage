@@ -19,7 +19,8 @@ class Score : ZilchComponent
         this.Owner.SpriteText.Text = "Score: `this.Score`";
         
         this.DataCog.DataSaver.Score = this.Score;
-        this.DataCog.DataSaver.Time = Math.Round(this.Timer.Time.Time);
+        this.Space.SpaceScore.Score = this.Score;
+        //this.DataCog.DataSaver.Time = Math.Round(this.Timer.Time.Time);
         Zero.ObjectStore.Store("Data", this.DataCog);
     }
 }

@@ -52,7 +52,7 @@ class PlayerController : ZilchComponent
       if(Zero.Keyboard.KeyIsDown(Keys.W))
       {
           this.Owner.Transform.Translation += Real3(0,5,0) * event.Dt;
-          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation && this.Owner.Sprite.SpriteSource != SpriteSource.Circle)
           {
               this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
           }
@@ -60,7 +60,7 @@ class PlayerController : ZilchComponent
       else if(Zero.Keyboard.KeyIsDown(Keys.S))
       {
           this.Owner.Transform.Translation -= Real3(0,5,0) * event.Dt;
-          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation && this.Owner.Sprite.SpriteSource != SpriteSource.Circle)
           {
               this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
           }
@@ -90,7 +90,7 @@ class PlayerController : ZilchComponent
       if(Zero.Keyboard.KeyIsDown(Keys.W))
       {
           this.Owner.Transform.Translation += Real3(0,5,0) * event.Dt;
-          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation && this.Owner.Sprite.SpriteSource != SpriteSource.Circle)
           {
               this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
           }
@@ -98,7 +98,7 @@ class PlayerController : ZilchComponent
       else if(Zero.Keyboard.KeyIsDown(Keys.S))
       {
           this.Owner.Transform.Translation -= Real3(0,5,0) * event.Dt;
-          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation)
+          if(this.Owner.Sprite.SpriteSource != SpriteSource.AlienClimbAnimation && this.Owner.Sprite.SpriteSource != SpriteSource.Circle)
           {
               this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
           }

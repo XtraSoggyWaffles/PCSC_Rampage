@@ -89,12 +89,23 @@ class PlayerAnimation : ZilchComponent
                 this.Owner.Sprite.SpriteSource = this.ClassAttack;
                 this.AttackAnimationActive = true;
             }
+            else if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.Owner.Sprite.SpriteSource == SpriteSource.AlienClimbAnimation && !this.AttackAnimationActive)
+            {
+                this.Owner.Sprite.SpriteSource = SpriteSource.Circle;
+                this.AttackAnimationActive = true;
+            }
         
         
-        if(this.AttackAnimationActive && this.Owner.Sprite.CurrentFrame == 3)
+        if(this.AttackAnimationActive && this.Owner.Sprite.SpriteSource == this.ClassAttack && this.Owner.Sprite.CurrentFrame == 3)
         {
             this.AttackAnimationActive = false;
             this.Owner.Sprite.SpriteSource = this.Class;
+        }
+        
+        if(this.AttackAnimationActive && this.Owner.Sprite.SpriteSource == SpriteSource.Circle && this.Owner.Sprite.CurrentFrame == 0)
+        {
+            this.AttackAnimationActive = false;
+            this.Owner.Sprite.SpriteSource = SpriteSource.AlienClimbAnimation;
         }
    
    

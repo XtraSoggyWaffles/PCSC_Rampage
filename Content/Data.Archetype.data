@@ -8,6 +8,10 @@ Cog =
 	{
 		string Name = "Data",
 	},
+	Archetyped = 
+	{
+		string Name = "5a6b7e9e056e5964:Data",
+	},
 	Transform = 
 	{
 		Vec3 Translation = [-26.8400764, -10.1354399, -1.21144058e-06],

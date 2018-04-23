@@ -113,13 +113,14 @@ class UIMenuManager : ZilchComponent
         if(button.Name == "StartButton" ||
            button.Name == "ControlsButton" ||
            button.Name == "CreditsButton" ||
-           button.Name == "BackButton" )
+           button.Name == "BackButton" ||
+           button.Name == "RetryButton")
         {
           this.Space.LoadLevel(levelToLoad);
         }
         
         // If the button is meant to quit the game...
-        else if(button.Name == "ExitButton")
+        else if(button.Name == "QuitButton")
         {
           //Create a new instance of the event that requests the confirmation window
           var conReq = ConfirmationPopUpRequest();

@@ -91,12 +91,32 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		ConfirmationPopUp = 
+		{
+			string ConfirmationLevel = "5a053a93f3eea758:QuitPopup",
+			string ConSpaceArchetype = "554cea0f94af6dc4:Space",
+			CogPath SourceMenu = 
+			{
+				string Path = ":/MenuButtons",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 3,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -104,7 +124,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.540458798, 0.231625199, 50],
+			Vec3 Translation = [0.663764775, 6.33127451, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -116,7 +136,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 22.1034222,
+			float Size = 22.1034584,
 		},
 		EditorCameraController = 
 		{
@@ -124,7 +144,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.540458798, 0.231625199, -2.36242048e-08],
+			Vec3 LookTarget = [0.663764775, 6.33127451, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -172,7 +192,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Named = 
 		{
@@ -212,46 +232,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
-		},
-		Named = 
-		{
-			string Name = "Title",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 8.54242039, 1],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 60,
-			string Text = "Premal Rampage",
-			TextAlign Align = Center,
-			float PixelsPerUnit = 64,
-			bool Smoothing = true,
-		},
-		Area = 
-		{
-			Vec2 Size = [10, 2],
-			Location Origin = Center,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 6,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -289,7 +270,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 7,
+					uint Id = 6,
 				},
 				Named = 
 				{
@@ -297,7 +278,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [-5.49094868, 3.66063404, 0],
+					Vec3 Translation = [-6, 0.878446817, 0],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -342,7 +323,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 8,
+					uint Id = 7,
 				},
 				Named = 
 				{
@@ -350,7 +331,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [4.3184042, 3.66063404, 0],
+					Vec3 Translation = [2, -3.12155318, 0],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -395,7 +376,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 9,
+					uint Id = 8,
 				},
 				Named = 
 				{
@@ -403,7 +384,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [-4.80458164, -4.06101513, 0],
+					Vec3 Translation = [-2, -1.12155318, 0],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -448,7 +429,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 10,
+					uint Id = 9,
 				},
 				Named = 
 				{
@@ -456,7 +437,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [4.83318043, -4.06101513, 0],
+					Vec3 Translation = [6, -5.12155342, 0],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -497,6 +478,46 @@ Level =
 					string LevelToLoad = "",
 				},
 			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 10,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.671652436, 4, 1],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5a6604625ad386fe:ET-Title",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [20, 20],
+			Location Origin = Center,
 		},
 	},
 },

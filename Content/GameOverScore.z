@@ -1,0 +1,12 @@
+class GameOverScore : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Owner.SpriteText.Text = "Score : `this.Space.SpaceScore.Score`";
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+}
